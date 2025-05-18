@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Akash Tour and Travel</title>
+<form id="bookingForm" action="https://formspree.io/f/mldbzvvl" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+</form>
+<style>
+  /* Reset and basic styling */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+  }
+  header {
+    background: #0077b6;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  nav {
+    background: #023e8a;
+    display: flex;
+    justify-content: center;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+  nav a:hover {
+    background: #0096c7;
+  }
+  section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h2 {
+    margin-bottom: 15px;
+    color: #0077b6;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  form input, form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  form button {
+    margin-top: 15px;
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  form button:hover {
+    background: #0096c7;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #023e8a;
+    color: white;
+    margin-top: 40px;
+  }
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      padding: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Akash Tour and Travel</h1>
+  <p>Your trusted travel partner</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#booking">Book Now</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>Welcome to Akash Tour and Travel</h2>
+  <p>We provide reliable taxi services and memorable travel experiences across the city and beyond. Book your ride with us for a comfortable and safe journey.</p>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Akash Tour and Travel has been serving happy customers for over 10 years. Our fleet of clean, well-maintained vehicles and professional drivers ensure you reach your destination on time and in comfort.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Airport Transfers</li>
+    <li>City Tours and Sightseeing</li>
+    <li>Local and Outstation Cab Booking</li>
+    <li>Package Tours and Travel Planning</li>
+  </ul>
+</section>
+
+<section id="booking">
+  <h2>Book Your Ride</h2>
+  <form id="bookingForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter 10-digit number" />
+
+    <label for="pickup">Pickup Location</label>
+    <input type="text" id="pickup" name="pickup" required />
+
+    <label for="drop">Drop Location</label>
+    <input type="text" id="drop" name="drop" required />
+
+    <label for="date">Date of Travel</label>
+    <input type="date" id="date" name="date" required />
+
+    <label for="time">Time of Pickup</label>
+    <input type="time" id="time" name="time" required />
+
+    <label for="serviceType">Service Type</label>
+    <select id="serviceType" name="serviceType" required>
+      <option value="">Select service</option>
+      <option value="airport">Airport Transfer</option>
+      <option value="city">City Tour</option>
+      <option value="outstation">Outstation</option>
+      <option value="package">Package Tour</option>
+    </select>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+  <p id="formMessage" style="margin-top:15px; color: green;"></p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: +91 98765 43210</p>
+  <p>Email: info@akashtourandtravel.com</p>
+  <p>WhatsApp: +91 98765 43210</p>
+  <p>Address: 123 Main Street, Your City, India</p>
+</section>
+
+<footer>
+  &copy; 2025 Akash Tour and Travel. All rights reserved.
+</footer>
+
+<script>
+  // Simple form submit handler
+  const form = document.getElementById('bookingForm');
+  const message = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // You can add backend integration here (like sending form data to server or email)
+    // For now, just show a success message and reset the form
+
+    message.textContent = 'Thank you for your booking! We will contact you shortly.';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
